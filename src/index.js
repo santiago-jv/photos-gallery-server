@@ -1,6 +1,5 @@
 require('dotenv').config()
 const express = require('express');
-const morgan = require('morgan');
 const indexRouter = require('./routes/indexRouter');
 const app = express()
 const cors = require('cors');
@@ -8,7 +7,7 @@ require('../database/connection')
 app.set('PORT', process.env.PORT || 8080)
 app.use(express.json())
 app.use(cors())
-app.use(morgan('dev'))
+
 app.get('',(req,res)=>res.send("Welcome"))
 app.use(indexRouter)
 
