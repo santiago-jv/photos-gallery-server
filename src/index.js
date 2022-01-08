@@ -5,7 +5,7 @@ const app = express()
 const cors = require('cors');
 require('../database/connection')
 app.set('PORT', process.env.PORT || 8080)
-app.use(express.json())
+app.use(express.json({limit:'15mb' }))
 app.use(cors())
 
 app.get('',(req,res)=>res.send("Welcome"))
